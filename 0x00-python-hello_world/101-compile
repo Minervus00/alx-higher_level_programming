@@ -1,0 +1,5 @@
+#!/usr/bin/python3
+import os
+
+pyfile = os.getenv('PYFILE')
+python3 -O pyfile
