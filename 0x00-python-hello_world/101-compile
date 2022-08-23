@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 import os
-
+import py_compile
 pyfile = os.getenv('PYFILE')
-python3 -O pyfile
+pwd = os.getenv('PWD')
+print("Compiling main.py ...")
+py_compile.compile(pyfile, cfile="./main.pyc", dfile="main.pyc")
