@@ -15,6 +15,8 @@ int check_cycle(listint_t *list)
 	if (buff != NULL)
 	{
 		h = buff->next;
+		if (h == buff)
+			return (1);
 		while (h != NULL)
 		{
 			while (buff != h)
