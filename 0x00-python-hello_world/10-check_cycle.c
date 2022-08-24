@@ -17,7 +17,7 @@ int check_cycle(listint_t *list)
 		h = buff->next;
 		while (h != NULL)
 		{
-			if (h->next == NULL)
+			if (h->next == buff)
 				return (1);
 			h = h->next;
 		}
