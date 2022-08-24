@@ -12,16 +12,20 @@ int check_cycle(listint_t *list)
 
 	buff = list;
 	h = NULL;
-	while (buff != NULL)
+	if (buff != NULL)
 	{
 		h = buff->next;
 		while (h != NULL)
 		{
-			if (h->next == buff)
-				return (1);
+			while (buff != h)
+			{
+				if (h->next == buff)
+					return (1);
+				buff = buff->next;
+			}
+			buff = list;
 			h = h->next;
 		}
-		buff = buff->next;
 	}
 	return (0);
 }
