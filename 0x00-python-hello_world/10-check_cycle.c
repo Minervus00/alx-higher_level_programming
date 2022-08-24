@@ -8,25 +8,22 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *buff, *h;
+	listint_t *buff1, *buff2;
 
-	buff = list;
-	h = NULL;
-	if (buff != NULL)
+	buff1 = list;
+	buff2 = list;
+	if (buff1 != NULL)
 	{
-		h = buff->next;
-		if (h == buff)
+		if (buff1 == buff1->next)
 			return (1);
-		while (h != NULL)
+		while (buff1->next != NULL && buff2->next != NULL)
 		{
-			while (buff != h)
-			{
-				if (h->next == buff)
-					return (1);
-				buff = buff->next;
-			}
-			buff = list;
-			h = h->next;
+			buff1 = buff1->next;
+			buff2 = (buff2->next)->next;
+			if (buff1 == buff2)
+				return (1);
+			if (buff2 == NULL)
+				return (0);
 		}
 	}
 	return (0);
