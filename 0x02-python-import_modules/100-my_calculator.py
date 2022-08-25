@@ -10,6 +10,6 @@ if __name__ == "__main__":
     if argv[2] not in calc:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
-    a, b = argv[1], argv[3]
+    a, b = int(argv[1]), int(argv[3])
     fct = calc[argv[2]]
     print("{} {} {} = {}".format(a, argv[2], b, fct(a, b)))
