@@ -1,3 +1,2 @@
 #!/usr/bin/python3
-for j in range(65, 91):
-    print(chr(j), end=("", "\n")[j == 90])
+list(map(lambda j: print(chr(j), end=("", "\n")[j == 90]), range(65, 91)))
