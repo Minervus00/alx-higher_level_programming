@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stdio.h>
 
 /**
  * add_nodeint - adds a new node at the beginning of a listint_t list
@@ -40,13 +39,10 @@ int is_palindrome(listint_t **head)
 		add_nodeint(&rev, buff->n);
 		buff = buff->next;
 	}
-	printf("old n = %d\n", n);
 	n = n / 2;
-	printf("new n = %d\n", n);
 	buff = *head;
 	while (n)
 	{
-		printf("ooo\n");
 		if (rev->n != buff->n)
 		{
 			free_listint(rev);
@@ -56,7 +52,6 @@ int is_palindrome(listint_t **head)
 		buff = buff->next;
 		n -= 1;
 	}
-	printf("no palin\n");
 	free_listint(rev);
 	return (1);
 }
