@@ -7,3 +7,4 @@ def uniq_add(my_list=[]):
             som += b
             dic[b] = 'full'
     return som
+    # or simply return sum({x for x in my_list})
