@@ -13,7 +13,7 @@ class Node:
     def __init__(self, data, next_node=None):
         """__init__ method doc"""
         self.__data = check_attr(data, int, "data must be an integer")
-        self.__next_node = check_attr(next_node, Node, 
+        self.__next_node = check_attr(next_node, Node, \
                                     "next_node must be a Node object")
 
     @property
@@ -34,7 +34,7 @@ class Node:
     @next_node.setter
     def next_node(self, value):
         """Sets the current node next_node to value"""
-        self.__next_node = check_attr(value, Node, 
+        self.__next_node = check_attr(value, Node, \
                                     "next_node must be a Node object")
 
 
