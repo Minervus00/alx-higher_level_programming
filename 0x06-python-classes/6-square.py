@@ -54,11 +54,10 @@ class Square:
                 print("#" * self.__size)
 
 
-
 def check_format_for_size(value):
     """Checks if the value has the required type to be assigned to size.
         Return this value if it's the case or raise an error otherwise
-        
+
         Args:
             value (any type): the value to be checked
     """
@@ -69,10 +68,11 @@ def check_format_for_size(value):
     else:
         raise TypeError("size must be an integer")
 
+
 def check_format_for_position(value):
     """Checks if the value has the required type to be assigned to position.
         Return this value if it's the case or raise an error otherwise
-        
+
         Args:
             value (any type): the value to be checked
     """
