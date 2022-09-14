@@ -60,14 +60,11 @@ class Square:
         for x in range(self.__position[1]):
             s += "\n"
 
-        if self.__size == 0:
-            s += "\n"
-        else:
-            for w in range(self.__size):
-                if w != 0:
-                    s += "\n"
-                s += " " * self.__position[0]
-                s += ("#" * self.__size)
+        for w in range(self.__size):
+            if w != 0:
+                s += "\n"
+            s += " " * self.__position[0]
+            s += ("#" * self.__size)
         return s
 
 
