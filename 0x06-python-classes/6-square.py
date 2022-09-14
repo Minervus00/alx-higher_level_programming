@@ -46,10 +46,9 @@ class Square:
         for x in range(self.__position[1]):
             print()
 
-        else:
-            for w in range(self.__size):
-                print(" " * self.__position[0], end="")
-                print("#" * self.__size)
+        for w in range(self.__size):
+            print(" " * self.__position[0], end="")
+            print("#" * self.__size)
 
 
 def check_format_for_size(value):
