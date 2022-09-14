@@ -91,7 +91,7 @@ def check_format_for_position(value):
             value (any type): the value to be checked
     """
     if isinstance(value, tuple) and len(value) == 2:
-        if any(not isinstance(w, int) for w in value):
+        if any((not isinstance(w, int) or w < 0) for w in value):
             raise TypeError("position must be a tuple of 2 positive integers")
         return value
     else:
