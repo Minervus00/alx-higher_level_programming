@@ -58,8 +58,7 @@ class Square:
         according to his position"""
         s = ""
         if self.__size == 0:
-            s += "\n"
-            return
+            return s
         for x in range(self.__position[1]):
             s += "\n"
 
