@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """Module for MagicClass class"""
+import math
 
 
 class MagicClass:
-    """A really magic class
-    Attributes: radius (int, optional): the circle radius"""
+    """A really magic class"""
     def __init__(self, radius=0):
         """__init__ function doc"""
         self._MagicClass__radius = 0
