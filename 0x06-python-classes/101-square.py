@@ -52,7 +52,7 @@ class Square:
             for w in range(self.__size):
                 print(" " * self.__position[0], end="")
                 print("#" * self.__size)
-	
+
     def __str__(self):
         """Prints in stdout the square with the character #
         according to his position"""
@@ -65,10 +65,11 @@ class Square:
         else:
             for w in range(self.__size):
                 if w != 0:
-                    s  += "\n"
+                    s += "\n"
                 s += " " * self.__position[0]
                 s += ("#" * self.__size)
         return s
+
 
 def check_format_for_size(value):
     """Checks if the value has the required type to be assigned to size.
