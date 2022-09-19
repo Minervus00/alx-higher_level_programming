@@ -6,7 +6,7 @@
 
 def add_integer(a, b=98):
     """Function that adds two integers
-    
+
     Args:
         a (int): 1st int
         b (int, optional): 2nd int
