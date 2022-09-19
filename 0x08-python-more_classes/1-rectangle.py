@@ -26,7 +26,7 @@ class Rectangle:
 
 
 def check_format(value, attr):
-    """Checks if the value has the required type to be assigned to width or height.
+    """Checks if the value is valid and can be assigned to width or height.
         Return this value if it's the case or raise an error otherwise
 
         Args:
