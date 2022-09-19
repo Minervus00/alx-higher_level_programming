@@ -17,7 +17,7 @@ class TestMaxInteger(unittest.TestCase):
     #     self.assertRaises(ValueError, max_integer, [1, 2, [3], 4])
 
     def test_max(self):
-        self.assertAlmostEqual(max_integer([1, 2, 3, 4]), 4)
+        self.assertAlmostEqual(max_integer([1, 2, 3, 1, 4]), 4)
         self.assertAlmostEqual(max_integer([1, 2, 3, 4, 2]), 4)
         self.assertAlmostEqual(max_integer([1, 2, 100, 3, 4]), 100)
         self.assertAlmostEqual(max_integer([11, 2, 3, 4]), 11)
