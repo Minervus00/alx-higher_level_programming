@@ -2,9 +2,6 @@
 """Module containing an empty class"""
 
 
-from turtle import width
-
-
 class Rectangle:
     """Class that defines a Rectangle"""
     number_of_instances = 0
