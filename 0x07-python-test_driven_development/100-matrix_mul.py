@@ -21,8 +21,10 @@ def good_format(matrix, str):
 
         for itm in line:
             if not isinstance(itm, (int, float)):
-                raise TypeError(f"{str} should contain only integers or floats")
+                raise TypeError(
+                    f"{str} should contain only integers or floats")
     return (lns, col)
+
 
 def matrix_mul(m_a, m_b):
     """Returns the product of two matrices"""

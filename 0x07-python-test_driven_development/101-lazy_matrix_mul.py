@@ -20,7 +20,8 @@ def good_format(matrix, stri):
 
         for itm in line:
             if not isinstance(itm, (int, float)):
-                raise TypeError(f"{stri} should contain only integers or floats")
+                raise TypeError(
+                    f"{stri} should contain only integers or floats")
 
 
 def lazy_matrix_mul(m_a, m_b):
