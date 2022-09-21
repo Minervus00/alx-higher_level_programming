@@ -1,4 +1,4 @@
-#!C:/Users/LENOVO/anaconda3/python.exe
+#!/usr/bin/python3
 """Module for the Queen"""
 from sys import exit, argv
 
@@ -50,12 +50,12 @@ def is_valid(col, row):
     # Checking row
     if any(itm != EMPTY for itm in board[row]):
         return False
-    
+
     # Check column
     for line in board:
         if line[col] != EMPTY:
             return False
-    
+
     # Check diagonals
     for h in range(1, N):
         y = col + h
@@ -102,7 +102,7 @@ def explore_col(c):
     while frontier:
         col, row = frontier.pop()
         dic["cur_col"] = col
-        # If the algorithm go back clean the board by removing useless 
+        # If the algorithm go back clean the board by removing useless
         # marked states
         while dic["prev_col"] > dic["cur_col"]:
             # print("colomn back")
