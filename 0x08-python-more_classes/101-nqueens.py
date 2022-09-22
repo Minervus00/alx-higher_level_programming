@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Module for the Queen"""
-from sys import exit, argv
-
+from sys import exit, argv, setrecursionlimit
+setrecursionlimit(5000)
 # ================ Handle errors ========
 
 
