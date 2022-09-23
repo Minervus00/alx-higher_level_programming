@@ -9,13 +9,15 @@ def good_format(matrix, str):
         raise TypeError(f"{str} must be a list")
     if matrix in ([], [[]]):
         raise ValueError(f"{str} can't be empty")
-    col = len(matrix[0])
+    
     lns = 0
     for line in matrix:
         lns += 1
         if not isinstance(line, list):
             raise TypeError(f"{str} must be a list of lists")
 
+        if lns == 1:
+            col = len(matrix[0])
         if len(line) != col:
             raise TypeError(f"each row of {str} must be of the same size")
 
