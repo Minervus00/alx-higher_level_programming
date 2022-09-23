@@ -9,7 +9,7 @@ def good_format(matrix, str):
         raise TypeError(f"{str} must be a list")
     if matrix in ([], [[]]):
         raise ValueError(f"{str} can't be empty")
-    
+
     lns = 0
     for line in matrix:
         lns += 1
