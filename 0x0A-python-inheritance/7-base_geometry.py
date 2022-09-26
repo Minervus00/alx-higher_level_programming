@@ -3,7 +3,7 @@
 
 
 class BaseGeometry:
-    """Class BaseGeometry"""
+    """Class BaseGeometry for the win"""
 
     def area(self):
         """area() an public instance method"""
