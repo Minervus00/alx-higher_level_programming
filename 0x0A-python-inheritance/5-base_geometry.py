@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""Module containing inherits_from"""
+"""Module containing class BaseGeometry"""
 
 
 class BaseGeometry:
+    """Class BaseGeometry"""
     pass
