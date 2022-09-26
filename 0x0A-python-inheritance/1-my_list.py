@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module containing lookup"""
+"""Module containing MyList"""
 
 
 class MyList(list):
