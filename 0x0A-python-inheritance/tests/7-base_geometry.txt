@@ -19,6 +19,11 @@ Traceback (most recent call last):
     ...
 TypeError: width must be an integer
 
+>>> bg.integer_validator("width", True)
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
+
 >>> bg.integer_validator("width", 0)
 Traceback (most recent call last):
     ...
