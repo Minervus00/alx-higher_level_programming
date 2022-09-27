@@ -2,7 +2,7 @@
 """Module containing class BaseGeometry"""
 
 
-class BaseGeometry:
+class BaseGeometry(object):
     """Class BaseGeometry for the win"""
 
     def area(self):
