@@ -4,6 +4,6 @@
 
 def add_attribute(cls, name, val):
     """Adds a new attribute to an object if it’s possible"""
-    tmp = getattr(cls, name, False)
-    if not tmp:
-        cls.name = val
+    if not hasattr(cls, "__dict__"):
+        raise TypeError("can't add new attribute")
+    setattr(cls, name, val)
