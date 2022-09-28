@@ -13,7 +13,6 @@ def add_item():
         pass
     if getsize("add_item.json") == 0:
         save_to_json_file([], "add_item.json")
-        return
 
     lst = load_from_json_file("add_item.json")
     lst.extend(argv[1:])
