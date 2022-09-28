@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module containing load_from_json_file function"""
+"""Module containing add_item function"""
 from os.path import getsize
 from sys import argv
 
