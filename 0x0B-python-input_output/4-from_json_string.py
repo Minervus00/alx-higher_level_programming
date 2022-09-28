@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module containing append_write function"""
+"""Module containing from_json_string function"""
 from json import loads
 
 
