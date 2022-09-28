@@ -1,4 +1,4 @@
-#!C:/Users/LENOVO/AppData/Local/Programs/Python/Python39/python.exe
+#!/usr/bin/python3
 """Module containing load_from_json_file function"""
 from os.path import getsize
 from sys import argv
