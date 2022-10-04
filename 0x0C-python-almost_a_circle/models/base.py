@@ -48,6 +48,9 @@ class Base:
     def create(cls, **dictionary):
         """Returns an instance with all attributes in the dict already set"""
         obj = cls(5, 5)  # dummy object in order to use update
+        for attr in ['x', 'y']:
+            if dictionary.get(attr) is None:
+                dictionary[attr] = 0
         obj.update(**dictionary)
         return obj
 
