@@ -28,5 +28,5 @@ class TestSquare(unittest.TestCase):
         self.assertAlmostEqual(r1.area(), 16)
         r2 = Square(5, 3)
         self.assertAlmostEqual(r2.area(), 25)
-        self.assertAlmostEqual(str(r2), "[Square] (1) 3/0 - 5")
-        self.assertAlmostEqual(str(r1), "[Square] (7) 6/7 - 4")
+        # self.assertEqual(str(r2), "[Square] (1) 3/0 - 5")
+        # self.assertEqual(str(r1), "[Square] (7) 6/7 - 4")
