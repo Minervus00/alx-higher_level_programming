@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""Unittest for max_integer([..])
-"""
+"""Unittest for class Base"""
 import unittest
 from models.base import Base
 

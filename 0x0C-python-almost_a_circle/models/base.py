@@ -2,6 +2,7 @@
 """Module containing the class Base"""
 from json import dumps, loads
 from os.path import exists
+import csv
 
 
 class Base:
@@ -60,18 +61,43 @@ class Base:
         fname = f"{cls.__name__}.json"
         if not exists(fname):
             return []
-        with open(fname, 'r', encoding="utf-8") as file:
+        with open(fname, encoding="utf-8") as file:
             json_str = file.read()
         list_dic = cls.from_json_string(json_str)
         list_int = [cls.create(**dic) for dic in list_dic]
         return list_int
 
-    # @classmethod
-    # def save_to_file_csv(cls, list_objs):
-    #     """"""
-    #     pass
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ Serializes to CSV file"""
+        if list_objs is None:
+            list_objs = []
+        list_dic = [obj.to_dictionary() for obj in list_objs]
 
-    # @classmethod
-    # def load_from_file_csv(cls):
-    #     """"""
-    #     pass
+        fname = cls.__name__
+        if fname == "Rectangle":
+            fieldnames = ['id', 'width', 'height', 'x', 'y']
+        elif fname == "Square":
+            fieldnames = ['id', 'size', 'x', 'y']
+
+        fname += ".csv"
+        with open(fname, 'w', encoding='utf-8') as file:
+            writer = csv.DictWriter(file, fieldnames=fieldnames)
+            writer.writeheader()
+            for dic in list_dic:
+                writer.writerow(dic)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserializes from CSV file and returns a list of instances"""
+        fname = f"{cls.__name__}.csv"
+        if not exists(fname):
+            return []
+        with open(fname, encoding="utf-8") as file:
+            reader = csv.DictReader(file)
+            # Convert dics in reader values' from string to int
+            list_dic = [
+                dict((key, int(itm)) for key, itm in dic.items())
+                for dic in reader]
+        list_int = [cls.create(**dic) for dic in list_dic]
+        return list_int
