@@ -3,6 +3,7 @@
 from json import dumps, loads
 from os.path import exists
 import csv
+import turtle
 
 
 class Base:
@@ -101,3 +102,25 @@ class Base:
                 for dic in reader]
         list_int = [cls.create(**dic) for dic in list_dic]
         return list_int
+
+    def draw_rectangle(obj):
+        """Draws rectangle or square"""
+        width = obj.width
+        height = obj.height
+        turtle.penup()
+        turtle.setpos(obj.x, - obj.y)
+        turtle.pendown()
+        turtle.setheading(0)
+        for t in range(4):
+            elm = (width, height)[t % 2 != 0]
+            turtle.forward(elm)
+            turtle.right(90)
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Opens a window and draws all the Rectangles and Squares"""
+        for obj in list_rectangles:
+            Base.draw_rectangle(obj)
+        for obj in list_squares:
+            Base.draw_rectangle(obj)
+        turtle.done()
