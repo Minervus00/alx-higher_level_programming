@@ -8,6 +8,6 @@ if (vari === undefined) {
   if (Object.is(vari, NaN)) {
     console.log('Not a number');
   } else {
-    console.log(`My first number: ${vari}`);
+    console.log(`My number: ${vari}`);
   }
 }
