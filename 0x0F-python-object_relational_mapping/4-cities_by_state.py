@@ -1,5 +1,4 @@
-#!C:/Users/LENOVO/anaconda3/python.exe
-# /usr/bin/python3
+#!/usr/bin/python3
 
 if __name__ == "__main__":
     from sys import argv
