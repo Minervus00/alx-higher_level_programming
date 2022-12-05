@@ -1,5 +1,4 @@
-#!C:/Users/LENOVO/anaconda3/python.exe
-# /usr/bin/python3
+#!/usr/bin/python3
 """ Module for this file"""
 
 if __name__ == "__main__":
@@ -11,7 +10,9 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     cur.execute(
-        "SELECT * FROM cities ORDER BY id")
+        """SELECT cities.id, cities.name, states.name FROM cities
+        INNER JOIN states WHERE cities.state_id = states.id    
+        ORDER BY cities.id;""")
 
     rows = cur.fetchall()
 
