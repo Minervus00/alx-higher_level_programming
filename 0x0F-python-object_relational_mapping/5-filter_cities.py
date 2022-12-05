@@ -16,8 +16,4 @@ if __name__ == "__main__":
             WHERE name = '{}');""".format(argv[4].split()[0]))
 
     rows = cur.fetchall()
-    if not rows:
-        print()
-    else:
-        for row in rows:
-            print(row[0])
+    print(", ".join(row[0] for row in rows))
