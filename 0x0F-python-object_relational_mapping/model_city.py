@@ -7,8 +7,8 @@ Base = declarative_base()
 
 
 class City(Base):
-    """State function docu"""
-    __tablename__ = 'cities'
-    id = Column(Integer, nullable=False, primary_key=True)
+    """City function docu"""
+    __tablename__ = "cities"
+    id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey('states.id'))
+    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
