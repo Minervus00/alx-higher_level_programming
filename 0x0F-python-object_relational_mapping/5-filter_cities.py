@@ -1,4 +1,5 @@
-#!/usr/bin/python3
+#!C:/Users/LENOVO/anaconda3/python.exe
+# /usr/bin/python3
 """ Module for this file"""
 
 if __name__ == "__main__":
@@ -10,9 +11,14 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     cur.execute(
-        "SELECT * FROM cities ORDER BY id")
+        """SELECT name FROM cities
+        WHERE state_id = (
+            SELECT id FROM states
+            WHERE name = '{}');""".format(argv[4].split()[0]))
 
     rows = cur.fetchall()
-
-    for row in rows:
-        print(row)
+    if not rows:
+        print()
+    else:
+        for row in rows:
+            print(row[0])
