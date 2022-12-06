@@ -1,5 +1,4 @@
-#!C:/Users/LENOVO/anaconda3/python.exe
-# /usr/bin/python3
+#!/usr/bin/python3
 """ Module for this file """
 
 if __name__ == "__main__":
