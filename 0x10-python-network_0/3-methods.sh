@@ -1,3 +1,3 @@
 #!/bin/bash
-# sends a DELETE request to the URL passed as the first argument and displays the body of the response
-curl -sX DELETE $1
+# takes in a URL and displays all HTTP methods the server will accept
+curl -sX OPTIONS $1
