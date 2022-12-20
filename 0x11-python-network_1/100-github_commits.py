@@ -8,6 +8,7 @@ if __name__ == "__main__":
 
     resp = requests.get(
         f"https://api.github.com/repos/{argv[2]}/{argv[1]}/commits")
+    # https://api.github.com/repos/<owner_name>/<repo_name>
     rep = resp.json()
     for coms in rep[:10]:
         print(f"{coms['sha']}: {coms['commit']['author']['name']}")
