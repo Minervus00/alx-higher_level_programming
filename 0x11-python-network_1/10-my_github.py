@@ -1,5 +1,4 @@
-#!C:/Users/LENOVO/anaconda3/python.exe
-# /usr/bin/python3
+#!/usr/bin/python3
 """ takes your GitHub credentials (username and password) and uses the
     GitHub API to display your id"""
 
