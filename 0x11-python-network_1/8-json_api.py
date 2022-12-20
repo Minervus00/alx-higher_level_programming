@@ -1,14 +1,26 @@
 #!/usr/bin/python3
-""" takes in a URL, sends a request to the URL and displays the body
-    of the response.
-    + handles errors"""
+""" takes in a letter and sends a POST request to
+    http://0.0.0.0:5000/search_user with the letter as a parameter.
+    + The letter must be sent in the variable q
+    + If no argument is given, set q=""
+    + If the response body is properly JSON formatted and not empty, display
+    the id and name like this: [<id>] <name>
+    + Otherwise:
+        * Display Not a valid JSON if the JSON is invalid
+        * Display No result if the JSON is empty"""
 
 if __name__ == "__main__":
     import requests
     from sys import argv
 
-    resp = requests.get(argv[1])
-    if resp.status_code < 400:
-        print(resp.text)
+    q = ""
+    if len(argv) > 1:
+        q = argv[1]
+    resp = requests.post("http://0.0.0.0:5000/search_user", data={'q': q})
+    if resp.status_code == 204:
+        print("No result")
     else:
-        print("Error code:", resp.status_code)
+        try:
+            print(resp.json())
+        except requests.exceptions.JSONDecodeError:
+            print("Not a valid JSON")
