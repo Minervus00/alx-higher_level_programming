@@ -1,13 +1,11 @@
 #!C:/Users/LENOVO/anaconda3/python.exe
 # /usr/bin/python3
-""" Python script that fetches https://alx-intranet.hbtn.io/status """
+""" takes in a URL, sends a request to the URL and displays the value of the
+    variable X-Request-Id in the response header """
 
 if __name__ == "__main__":
     import requests
+    from sys import argv
 
-    resp = requests.get('https://alx-intranet.hbtn.io/status')
-    resp = resp.text
-    print("Body response:")
-    print("\t- type:", type(resp))
-    print("\t- content:", resp)
-    print("\t- utf8 content:", resp)
+    resp = requests.get(argv[1])
+    print(resp.headers.get('X-Request-ID'))
