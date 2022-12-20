@@ -1,4 +1,5 @@
-#!/usr/bin/python3
+#!C:/Users/LENOVO/anaconda3/python.exe
+# /usr/bin/python3
 """ Python script that fetches https://alx-intranet.hbtn.io/status """
 
 if __name__ == "__main__":
