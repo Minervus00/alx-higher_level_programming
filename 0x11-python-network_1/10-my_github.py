@@ -6,7 +6,7 @@ if __name__ == "__main__":
     import requests
     from sys import argv
 
-    header = {'Authorization': f'Bearer {argv[2]}'}
+    header = {'Accept': 'application/vnd.github+json', 'Authorization': f'Bearer {argv[2]}'}
     resp = requests.get(
         f"https://api.github.com/users/{argv[1]}", headers=header)
     print(resp.json())
