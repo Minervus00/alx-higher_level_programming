@@ -9,4 +9,4 @@ if __name__ == "__main__":
     header = {'Authorization': f'token {argv[2]}'}
     resp = requests.get(
         f"https://api.github.com/users/{argv[1]}", headers=header)
-    print(resp.json().get('id'))
+    print(resp.json())
