@@ -17,10 +17,12 @@ if __name__ == "__main__":
     if len(argv) > 1:
         q = argv[1]
     resp = requests.post("http://0.0.0.0:5000/search_user", data={'q': q})
-    if resp.status_code == 204:
-        print("No result")
-    else:
-        try:
-            print(resp.json())
-        except requests.exceptions.JSONDecodeError:
-            print("Not a valid JSON")
+
+    try:
+        json_r = resp.json()
+        if json_r == '{}':
+            print("No result")
+        else:
+            print(json_r)
+    except requests.exceptions.JSONDecodeError:
+        print("Not a valid JSON")
