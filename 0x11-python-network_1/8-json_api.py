@@ -20,9 +20,10 @@ if __name__ == "__main__":
 
     try:
         json_r = resp.json()
-        if json_r == '{}':
+        if not json_r:
             print("No result")
         else:
+            # print(type(json_r))
             print(json_r)
     except requests.exceptions.JSONDecodeError:
         print("Not a valid JSON")
