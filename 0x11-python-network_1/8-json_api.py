@@ -23,7 +23,6 @@ if __name__ == "__main__":
         if not json_r:
             print("No result")
         else:
-            # print(type(json_r))
-            print(json_r)
+            print("[{}] {}".format(json_r.items()))
     except requests.exceptions.JSONDecodeError:
         print("Not a valid JSON")
