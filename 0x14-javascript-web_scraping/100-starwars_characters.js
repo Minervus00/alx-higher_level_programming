@@ -1,23 +1,25 @@
 #!/usr/bin/node
 
 const request = require('request');
-const url = process.argv[2];
-const targ = 'https://swapi-api.alx-tools.com/api/people/18/';
-let casts = 0;
+const mvId = process.argv[2];
+const url = 'https://swapi-api.alx-tools.com/api/films/';
 
 request(url, (error, response, body) => {
   if (!error) {
-    const result = JSON.parse(body);
+    const result = JSON.parse(body).results;
     const count = result.count;
     const films = result.results;
 
-    for (let i = 0; i < count; i++) {
-      const buff = films[i].characters;
-      const len = buff.length;
-      for (let y = 0; y < len; y++) {
-        if (buff[y] === targ) casts++;
+    result.array.forEach(element => {
+      if (element.episode_id.toString() === mvId) {
+        element.characters.forEach(char => {
+          request(char, (err, resp, bdy) => {
+            if (!err) {
+              console.log(JSON.parse(bdy).name);
+            }
+          })
+        })
       }
-    }
-    console.log(casts);
+    });
   }
 });
