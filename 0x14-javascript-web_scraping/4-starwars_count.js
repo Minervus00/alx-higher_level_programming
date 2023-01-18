@@ -8,7 +8,7 @@ const request = require('request');
 //   console.log(JSON.parse(body).films.length);
 // });
 const url = process.argv[2];
-const targ = 'https://swapi-api.alx-tools.com/api/people/18';
+const targ = 'https://swapi-api.alx-tools.com/api/people/18/';
 let casts = 0;
 
 request(url, (error, response, body) => {
