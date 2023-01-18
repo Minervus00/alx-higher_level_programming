@@ -10,7 +10,7 @@ request(url, (error, response, body) => {
     const count = result.count;
     const films = result.results;
 
-    result.array.forEach(element => {
+    result.forEach(element => {
       if (element.episode_id.toString() === mvId) {
         element.characters.forEach(char => {
           request(char, (err, resp, bdy) => {
