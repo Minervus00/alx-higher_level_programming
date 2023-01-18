@@ -9,6 +9,7 @@ for (let i = 0; i < 10; i++) {
   const key = i.toString();
   request(url + '?userId=' + key + '&completed=true', (err, resp, body) => {
     body = JSON.parse(body);
+    console.log(body);
     const len = body.length;
     if (!err && len) data[key] = len;
   });
