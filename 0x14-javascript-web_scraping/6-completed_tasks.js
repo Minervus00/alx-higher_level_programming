@@ -6,7 +6,7 @@ const url = process.argv[2];
 
 request(url, (err, resp, body) => {
   if (!err) {
-    let data = {};
+    const data = {};
     resp = JSON.parse(body);
     resp.forEach(todo => {
       if (todo.completed && data[todo.userId] === undefined) {
