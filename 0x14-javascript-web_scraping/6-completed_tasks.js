@@ -3,7 +3,7 @@
 
 const request = require('request');
 const url = process.argv[2];
-let data = {};
+var data = {};
 
 for (let i = 1; i <= 10; i++) {
   const key = i.toString();
@@ -12,8 +12,7 @@ for (let i = 1; i <= 10; i++) {
     const len = body.length;
     if (len !== 0) {
       data[key] = len;
-      console.log("i =", i, "l =", len);
+      console.log(data);
     }
   });
 }
-console.log(data);
