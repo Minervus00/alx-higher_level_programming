@@ -3,16 +3,16 @@
 
 const request = require('request');
 const url = process.argv[2];
-var data = {};
 
-for (let i = 1; i <= 10; i++) {
-  const key = i.toString();
-  request(url + '?userId=' + key + '&completed=true', (err, resp, body) => {
-    body = JSON.parse(body);
-    const len = body.length;
-    if (len !== 0) {
-      data[key] = len;
-      console.log(data);
-    }
-  });
-}
+request(url, (err, resp, body) => {
+  if (!err) {
+    let data = {};
+    resp = JSON.parse(body);
+    resp.forEach(todo => {
+      if (todo.completed && data[todo.userId] === undefined) {
+        data[todo.userId] = 1;
+      } else if (todo.completed) data[todo.userId] += 1;
+    });
+    console.log(data);
+  }
+});
