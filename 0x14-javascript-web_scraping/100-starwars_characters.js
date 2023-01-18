@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// Prints all characters of a Star Wars movie which id is given as parameter 
 
 const request = require('request');
 const mvId = process.argv[2];
