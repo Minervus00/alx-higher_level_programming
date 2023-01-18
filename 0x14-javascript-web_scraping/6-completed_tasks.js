@@ -11,7 +11,7 @@ for (let i = 0; i < 10; i++) {
     body = JSON.parse(body);
     console.log(body);
     const len = body.length;
-    if (!err && len) data[key] = len;
+    if (len !== 0) data[key] = len;
   });
 }
 console.log(data);
