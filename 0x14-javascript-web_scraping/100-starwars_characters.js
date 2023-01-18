@@ -7,8 +7,6 @@ const url = 'https://swapi-api.alx-tools.com/api/films/';
 request(url, (error, response, body) => {
   if (!error) {
     const result = JSON.parse(body).results;
-    const count = result.count;
-    const films = result.results;
 
     result.forEach(element => {
       if (element.episode_id.toString() === mvId) {
@@ -17,8 +15,8 @@ request(url, (error, response, body) => {
             if (!err) {
               console.log(JSON.parse(bdy).name);
             }
-          })
-        })
+          });
+        });
       }
     });
   }
