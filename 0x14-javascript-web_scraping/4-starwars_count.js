@@ -12,18 +12,19 @@ const targ = 'https://swapi-api.alx-tools.com/api/people/18/';
 let casts = 0;
 
 request(url, (error, response, body) => {
-  if (error) throw error;
-  const result = JSON.parse(body);
-  const count = result.count;
-  const films = result.results;
+  if (!error) {
+    const result = JSON.parse(body);
+    const count = result.count;
+    const films = result.results;
 
-  for (let i = 0; i < count; i++) {
-    let buff = films[i].characters;
-    let len = buff.length;
-    for (let y = 0; y < len; y++) {
-      if (buff[y] === targ) casts++;
+    for (let i = 0; i < count; i++) {
+      let buff = films[i].characters;
+      let len = buff.length;
+      for (let y = 0; y < len; y++) {
+        if (buff[y] === targ) casts++;
+      }
     }
-  }
 
-  console.log(casts);
+    console.log(casts);
+  }
 });
