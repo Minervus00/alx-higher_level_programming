@@ -3,7 +3,7 @@
 
 const request = require('request');
 const url = process.argv[2];
-const data = {}
+let data = {};
 
 for (let i = 1; i <= 10; i++) {
   const key = i.toString();
