@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// ./5-* http://loripsum.net/api lorepsum
 
 const fs = require('fs');
 const request = require('request');
