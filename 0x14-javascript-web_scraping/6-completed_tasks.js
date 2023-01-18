@@ -5,13 +5,15 @@ const request = require('request');
 const url = process.argv[2];
 const data = {}
 
-for (let i = 0; i < 10; i++) {
+for (let i = 1; i <= 10; i++) {
   const key = i.toString();
   request(url + '?userId=' + key + '&completed=true', (err, resp, body) => {
     body = JSON.parse(body);
-    console.log(body);
     const len = body.length;
-    if (len !== 0) data[key] = len;
+    if (len !== 0) {
+      data[key] = len;
+      console.log("i =", i, "l =", len);
+    }
   });
 }
 console.log(data);
