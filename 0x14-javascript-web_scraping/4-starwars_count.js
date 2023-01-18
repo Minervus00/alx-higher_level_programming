@@ -18,8 +18,8 @@ request(url, (error, response, body) => {
   const films = result.results;
 
   for (let i = 0; i < count; i++) {
-    let buff = films[i].characters;
-    let len = buff.length;
+    const buff = films[i].characters;
+    const len = buff.length;
     for (let y = 0; y < len; y++) {
       if (buff[y] === targ) casts++;
     }
