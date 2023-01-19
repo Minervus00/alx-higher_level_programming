@@ -14,6 +14,7 @@ request(url, (error, response, body) => {
         if (!err) {
           txt += JSON.parse(bdy).name;
           if (char !== result[result.length - 1]) txt += '\n';
+          else console.log(txt);
         }
       });
     });
