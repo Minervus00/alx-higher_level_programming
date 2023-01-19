@@ -8,15 +8,12 @@ request(url, (error, response, body) => {
   if (!error) {
     const result = JSON.parse(body).characters;
 
-    let txt = '';
-    result.forEach(char => {
-      request(char, (err, resp, bdy) => {
+    for (let idx = 0; idx < result.length; idx++) {
+      request(result[idx], (err, resp, bdy) => {
         if (!err) {
-          txt += JSON.parse(bdy).name;
-          if (char !== result[result.length - 1]) txt += '\n';
-          else console.log(txt);
+          console.log(JSON.parse(bdy).name);
         }
       });
-    });
+    }
   }
 });
