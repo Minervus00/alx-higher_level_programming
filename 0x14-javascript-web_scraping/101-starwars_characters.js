@@ -8,7 +8,7 @@ request(url, (error, response, body) => {
   if (!error) {
     const result = JSON.parse(body).characters;
 
-    const txt = '';
+    let txt = '';
     result.forEach(char => {
       request(char, (err, resp, bdy) => {
         if (!err) {
