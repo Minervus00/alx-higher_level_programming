@@ -10,9 +10,7 @@ request(url, (error, response, body) => {
 
     for (let idx = 0; idx < result.length; idx++) {
       request(result[idx], (err, resp, bdy) => {
-        if (!err) {
-          console.log(JSON.parse(bdy).name);
-        }
+        console.log(JSON.parse(bdy).name);
       });
     }
   }
