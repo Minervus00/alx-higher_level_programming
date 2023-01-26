@@ -1,2 +1,2 @@
 const para = document.querySelector('header');
-para.style.color = "#FF0000";
+para.style.color = '#FF0000';
